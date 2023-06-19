@@ -12,10 +12,9 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/",async function(req,res) {
     try{
-        const response = await axios("https://jsonplaceholder.typicode.com/posts");
-        const data = response.data;
-        console.log(data);
-        res.render("HomePage",data);
+        const response = await axios("https://dummyjson.com/posts");
+        const data = response.data.posts;
+        res.render("HomePage",{data:data});
     }catch(e){
         console.log(e);
     }
