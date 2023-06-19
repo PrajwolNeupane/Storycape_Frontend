@@ -6,14 +6,46 @@
     </head>
 <body>
     <%- include('./components/NavBar') %>
-    <div class="flex flex-row">
-        <div class="w-[25%] px-[2%] bg-primary-mid">
-
+    <div class="flex flex-row max-lg:flex-col">
+        <div class="w-[100%] lg:hidden py-[5px] bg-primary-light fixed left-0 cursor-pointer" onclick="filterModalAction()">
+            <h2 class="text-md text-center font-semibold text-text-main" id="filterModalButton">Open Filters</h2>
         </div>
-        <div class="w-[75%] px-[5%] min-h-[87.8vh] bg-white gap-[10px] flex-col flex" id="container">
+        <div class="w-[100%] flex flex-row gap-[10px] flex-wrap lg:hidden hidden px-[2%] bg-primary-light fixed top-[200px] md:top-[165px]" id="filtermodal">
+            <div class="flex flex-row items-center gap-[15px] max-lg:hidden"> 
+                <i class="uil uil-filter text-xl text-text-main"></i>
+                <h2 class="text-lg font-semibold text-text-main">Filters</h2>
+               </div>
+               <h4 class="text-xs font-medium text-text-main">Websites</h4>
+               <h4 class="text-xs font-medium text-text-main">Mobile App</h4>
+               <h4 class="text-xs font-medium text-text-main">Graphic Design</h4>
+               <h4 class="text-xs font-medium text-text-main">UI / UX Design</h4>
+               <h4 class="text-xs font-medium text-text-main">Internet of Things</h4>
+               <h4 class="text-xs font-medium text-text-main">Techonology</h4>
+              <a href="prajwolneupane.com.np" target="_blank"><h4 class="text-xs font-medium text-text-main">Artificial Intelligence</h4></a>
+               <h4 class="text-xs font-medium text-text-main">AI and Machine learning</h4>
+               <h4 class="text-xs font-medium text-text-main">Database</h4>
+               <h4 class="text-xs font-medium text-text-main">Networking</h4>
+        </div>
+        <div class="w-[25%] h-[88vh] px-[2%] bg-primary-light flex flex-col gap-[10px] fixed left-0  max-lg:hidden">
+           <div class="flex flex-row items-center gap-[15px] max-lg:hidden"> 
+            <i class="uil uil-filter text-xl text-text-main"></i>
+            <h2 class="text-lg font-semibold text-text-main">Filters</h2>
+           </div>
+           <h4 class="text-xs font-medium text-text-main">Websites</h4>
+           <h4 class="text-xs font-medium text-text-main">Mobile App</h4>
+           <h4 class="text-xs font-medium text-text-main">Graphic Design</h4>
+           <h4 class="text-xs font-medium text-text-main">UI / UX Design</h4>
+           <h4 class="text-xs font-medium text-text-main">Internet of Things</h4>
+           <h4 class="text-xs font-medium text-text-main">Techonology</h4>
+           <h4 class="text-xs font-medium text-text-main">Artificial Intelligence</h4>
+           <h4 class="text-xs font-medium text-text-main">AI and Machine learning</h4>
+           <h4 class="text-xs font-medium text-text-main">Database</h4>
+           <h4 class="text-xs font-medium text-text-main">Networking</h4>
+        </div>
+        <div class="w-[75%] px-[5%] min-h-[87.8vh] bg-primary-light gap-[10px] flex-col flex" id="container">
             <% for(var i = 0;i<data.length;i++){ %>
                 <div
-                class="flex flex-col py-[20px] px-[3%] mt-[20px] mb-[20px] w-[80%] bg-primary-light rounded-md"
+                class="flex flex-col py-[20px] px-[3%] mt-[20px] mb-[20px] w-[80%] bg-primary-mid rounded-md"
                id="content">
                 <div class="flex flex-row items-start gap-[10px]">
                   <image
