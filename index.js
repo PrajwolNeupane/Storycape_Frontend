@@ -1,3 +1,4 @@
+import axios from 'axios';
 import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -10,7 +11,15 @@ app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'));
 
 app.get("/",async function(req,res) {
-    res.render("HomePage");
+    try{
+        const response = await axios("https://jsonplaceholder.typicode.com/posts");
+        const data = response.data;
+        console.log(data);
+        res.render("HomePage",data);
+    }catch(e){
+        console.log(e);
+    }
+
 })
 
 app.listen(process.env.PORT || 5000, () => {
