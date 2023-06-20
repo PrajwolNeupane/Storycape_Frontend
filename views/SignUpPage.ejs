@@ -10,22 +10,23 @@
     >
       <form
         class="flex flex-col w-[450px] px-[2%] py-[30px] bg-primary-mid gap-[20px] rounded-sm"
+        onsubmit="signUp();return false"
       >
         <h2 class="text-xl font-bold text-text-mid">Join with Us</h2>
         <div class="flex flex-col">
-            <p class="text-xxs font-medium text-text-mid">User Name :</p>
-            <input
-              placeholder="Joe Doe"
-              type="text"
-              class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
-            />
-          </div>
+          <p class="text-xxs font-medium text-text-mid">User Name :</p>
+          <input
+            placeholder="Joe Doe"
+            type="text"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="signup-name"
+          />
+        </div>
         <div class="flex flex-col">
           <p class="text-xxs font-medium text-text-mid">User Email :</p>
           <input
             placeholder="joedoe@gmail.com"
             type="email"
-            class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="signup-email"
           />
         </div>
         <div class="flex flex-col">
@@ -33,17 +34,17 @@
           <input
             placeholder="***********"
             type="password"
-            class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="signup-password"
           />
         </div>
         <div class="flex flex-col">
-            <p class="text-xxs font-medium text-text-mid">Confrim Password :</p>
-            <input
-              placeholder="***********"
-              type="password"
-              class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
-            />
-          </div>
+          <p class="text-xxs font-medium text-text-mid">Confrim Password :</p>
+          <input
+            placeholder="***********"
+            type="password"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="signup-cpassword"
+          />
+        </div>
         <button
           type="submit"
           class="bg-secondary-mid hover:bg-secondary-main text-primary-light font-medium text-xs py-[5px] rounded-md"
@@ -57,12 +58,16 @@
           </h3>
         </a>
       </form>
-      <br/>
+      <br />
       <a href="/">
         <h4 class="text-text-mid font-medium">
           <i class="uil uil-arrow-left"></i> Back to Home
         </h4></a
       >
     </div>
+    <div
+      class="fixed right-[50px] min-w-[300px] bottom-[-100px] bg-primary-mid rounded-lg py-[10px] px-[20px] border-b-[5px] ease-linear"
+      id="login-toast"
+    ></div>
   </body>
 </html>

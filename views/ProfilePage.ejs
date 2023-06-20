@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./components/Heading') %>
+    <title>Blog | Profile</title>
+</head>
+<body>
+    <%- include('./components/NavBar') %>
+    <img src="<%= user.photoURL %>"/>
+    <button onclick="logOut()">Log Out</button>
+</body>
+</html>
