@@ -1,19 +1,20 @@
 <div
-  class="flex flex-row max-lg:flex-col max-lg:gap-[10px] px-[5%] py-[20px] w-[100%] justify-between items-center sticky top-0 z-5 bg-primary-light"
+  class="flex flex-row max-lg:flex-col max-lg:gap-[10px] px-[5%] py-[20px] w-[100%] justify-between items-center sticky top-0 z-5 bg-primary-light dark:bg-text-light"
 >
  <a href="/"> <h1 class="text-secondary-main font-bold text-xl">Storyscape</h1></a>
   <input
     placeholder="Search Blogs"
-    class="rounded-md outline-0 w-[100%] hidden max-md:block px-[10px] py-[5px] text-xxs bg-primary-mid"
+    class="rounded-md outline-0 w-[100%] hidden max-md:block px-[10px] py-[5px] text-xxs bg-primary-mid text-text-light dark:bg-text-mid dark:text-primary-light"
   />
   <div class="flex flex-row gap-[3vw] max-lg:gap-[2vw] max-md:gap-[5vw] items-center">
     <input
       placeholder="Search Blogs"
-      class="rounded-md outline-0 w-[250px] max-lg:w-[400px] max-md:hidden px-[10px] py-[5px] text-xxs bg-primary-mid"
+      class="rounded-md outline-0 w-[250px] max-lg:w-[400px] max-md:hidden px-[10px] py-[5px] text-xxs bg-primary-mid text-text-light dark:bg-text-mid dark:text-primary-light"
     />
-    <a href="/"><h3 class="text-xs text-text-light font-medium">Home</h3></a>
-    <a href="/about"><h3 class="text-xs text-text-light font-medium">About Us</h3></a>
-    <a><h3 class="text-xs text-text-light font-medium">Log in</h3></a>
-    <i class="uil uil-sun text-lg text-text-light"></i>
+    <a href="/"><h3 class="text-xs text-text-light dark:text-primary-light font-medium hover:text-secondary-mid dark:hover:text-secondary-mid">Home</h3></a>
+    <a href="/about"><h3 class="text-xs text-text-light dark:text-primary-light font-medium hover:text-secondary-mid dark:hover:text-secondary-mid">About Us</h3></a>
+    <a><h3 class="text-xs text-text-light dark:text-primary-light font-medium hover:text-secondary-mid  dark:hover:text-secondary-mid">Log in</h3></a>
+    <i class="uil uil-sun text-lg text-text-light dark:text-primary-light hover:text-secondary-mid dark:hover:text-secondary-mid cursor-pointer hidden" id="sun-icon" onclick="changeTheme(false)"></i>
+    <i class="uil uil-moon text-md text-text-light dark:text-primary-light hover:text-secondary-mid  dark:hover:text-secondary-midcursor-pointer hidden" id="moon-icon" onclick="changeTheme(true)"></i>
   </div>
 </div>
