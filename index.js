@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/",async function(req,res) {
     try{
+        console.log(req.cookies);
         const response = await axios("https://dummyjson.com/posts");
         const data = response.data.posts;
         res.render("HomePage",{data:data});
@@ -29,6 +30,14 @@ app.get("/blog/:id",async function(req,res) {
     }catch(e){
         console.log(e);
     }
+})
+
+app.get("/login",async function(req,res){
+    res.render("LoginPage");
+})
+
+app.get("/signup",async function(req,res){
+    res.render("SignUpPage");
 })
 
 app.get("/about",async function(req,res){

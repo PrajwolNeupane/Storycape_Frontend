@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./components/Heading') %>
+    <title>Blog | Login</title>
+  </head>
+  <body>
+    <div
+      class="bg-primary-light dark:bg-text-light h-[100vh] flex flex-col items-center justify-center"
+    >
+      <form
+        class="flex flex-col w-[450px] px-[2%] py-[30px] bg-primary-mid dark:bg-text-mid gap-[20px] rounded-sm" onsubmit="logIn();return false"
+      >
+        <h2 class="text-xl font-bold text-text-mid dark:text-primary-mid">Log In</h2>
+        <div class="flex flex-col">
+          <p class="text-xxs font-medium text-text-mid dark:text-primary-light">User Email :</p>
+          <input required
+            placeholder="joedoe@gmail.com"
+            type="email"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="login-email"
+          />
+        </div>
+        <div class="flex flex-col">
+          <p class="text-xxs font-medium text-text-mid dark:text-primary-light">User Password :</p>
+          <input required
+            placeholder="***********"
+            type="password"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium" id="login-password"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-secondary-mid hover:bg-secondary-main text-primary-light font-medium text-xs py-[5px] rounded-md"
+        >
+          Sign In
+        </button>
+        <a href="/signup">
+          <h3 class="text-xxs font-medium text-text-mid dark:text-primary-mid">
+            Doesn't have account ?
+            <span class="text-secondary-mid">Create new Account</span>
+          </h3>
+        </a>
+      </form>
+      <br/>
+      <a href="/">
+        <h4 class="text-text-mid font-medium dark:text-primary-mid">
+          <i class="uil uil-arrow-left"></i> Back to Home
+        </h4></a
+      >
+    </div>
+    <div class="fixed right-[50px] min-w-[300px] bottom-[-100px]  bg-primary-mid rounded-lg py-[10px] px-[20px] border-b-[5px] ease-linear" id="login-toast">
+    </div>
+  </body>
+</html>

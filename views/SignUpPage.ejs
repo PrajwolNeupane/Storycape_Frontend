@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./components/Heading') %>
+    <title>Blog | Login</title>
+  </head>
+  <body>
+    <div
+      class="bg-primary-light h-[100vh] flex flex-col items-center justify-center"
+    >
+      <form
+        class="flex flex-col w-[450px] px-[2%] py-[30px] bg-primary-mid gap-[20px] rounded-sm"
+      >
+        <h2 class="text-xl font-bold text-text-mid">Join with Us</h2>
+        <div class="flex flex-col">
+            <p class="text-xxs font-medium text-text-mid">User Name :</p>
+            <input
+              placeholder="Joe Doe"
+              type="text"
+              class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+            />
+          </div>
+        <div class="flex flex-col">
+          <p class="text-xxs font-medium text-text-mid">User Email :</p>
+          <input
+            placeholder="joedoe@gmail.com"
+            type="email"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+          />
+        </div>
+        <div class="flex flex-col">
+          <p class="text-xxs font-medium text-text-mid">User Password :</p>
+          <input
+            placeholder="***********"
+            type="password"
+            class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+          />
+        </div>
+        <div class="flex flex-col">
+            <p class="text-xxs font-medium text-text-mid">Confrim Password :</p>
+            <input
+              placeholder="***********"
+              type="password"
+              class="px-[5px] py-[5px] rounded-md text-xxs font-medium"
+            />
+          </div>
+        <button
+          type="submit"
+          class="bg-secondary-mid hover:bg-secondary-main text-primary-light font-medium text-xs py-[5px] rounded-md"
+        >
+          Sign Up
+        </button>
+        <a href="/login">
+          <h3 class="text-xxs font-medium text-text-mid">
+            Have account ?
+            <span class="text-secondary-mid">Log in here</span>
+          </h3>
+        </a>
+      </form>
+      <br/>
+      <a href="/">
+        <h4 class="text-text-mid font-medium">
+          <i class="uil uil-arrow-left"></i> Back to Home
+        </h4></a
+      >
+    </div>
+  </body>
+</html>
