@@ -16,10 +16,24 @@ app.get("/",async function(req,res) {
         const data = response.data.posts;
         res.render("HomePage",{data:data});
     }catch(e){
+        res.json({
+            error:"Error"
+        });
         console.log(e);
     }
 
 })
+app.get("/blog/:id",async function(req,res) {
+    try{
+
+    }catch(e){
+        console.log(e);
+    }
+})
+
+app.get("/about",async function(req,res){
+    res.render("AboutPage");
+});
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Server started");

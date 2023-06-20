@@ -42,8 +42,6 @@ async function appendBlog() {
     } catch (e) {
         console.log(e);
     }
-
-
 }
 
 window.addEventListener("scroll", function () {
