@@ -3,6 +3,9 @@ import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 
 const app = express();
@@ -18,11 +21,11 @@ app.get("/", async function (req, res) {
         const data = response.data.posts;
         var user = null
         if (req.cookies.token) {
-            response = await axios.post("http://localhost:8000/api/v2/user/auth", {
+            response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
                 token: req.cookies.token
             }, {
                 headers: {
-                    'api_key': "mero-54321-app"
+                    'api_key': `${process.env.API_KEY}`
                 }
             });
             user = response.data;
@@ -55,11 +58,11 @@ app.get("/signup", async function (req, res) {
 app.get("/profile", async function (req, res) {
     if (req.cookies.token) {
         try {
-            const response = await axios.post("http://localhost:8000/api/v2/user/auth", {
+            const response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
                 token: req.cookies.token
             }, {
                 headers: {
-                    'api_key': "mero-54321-app"
+                    'api_key': `${process.env.API_KEY}`
                 }
             });
             const user = response.data;

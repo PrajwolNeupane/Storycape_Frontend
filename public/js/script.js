@@ -1,5 +1,3 @@
-
-//Global Variables
 var openFilterModal = true;
 var isDarkTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") == "true" : false;
 
@@ -93,7 +91,7 @@ async function signUp() {
     var toast = document.getElementById("login-toast");
     if (password == cpassword) {
         try {
-            const response = await fetch(`http://localhost:8000/api/v2/user/createUser`, {
+            const response = await fetch(`${process.env.API_URL}api/v2/user/createUser`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application.json',
