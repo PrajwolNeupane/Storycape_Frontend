@@ -44,7 +44,7 @@ async function logIn() {
     var password = document.getElementById("login-password").value
     var toast = document.getElementById("login-toast");
     try {
-        const response = await fetch(`http://localhost:8000/api/v2/user/login`, {
+        const response = await fetch(`https://api.storyscape.prajwolneupane.com.np/api/v2/user/login`, {
             method: 'POST',
             headers: {
                 Accept: 'application.json',
@@ -93,7 +93,7 @@ async function signUp() {
     var toast = document.getElementById("login-toast");
     if (password == cpassword) {
         try {
-            const response = await fetch(`http://localhost:8000/api/v2/user/createUser`, {
+            const response = await fetch(`https://api.storyscape.prajwolneupane.com.np/api/v2/user/createUser`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application.json',
