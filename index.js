@@ -3,7 +3,6 @@ import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
-
 import * as dotenv from 'dotenv';
 dotenv.config();
 
