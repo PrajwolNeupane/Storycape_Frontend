@@ -74,7 +74,26 @@ app.get("/profile", async function (req, res) {
 });
 
 app.get("/about", async function (req, res) {
-    res.render("AboutPage");
+
+    var user = null
+
+    if (req.cookies.token) {
+        try {
+            const response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
+                token: req.cookies.token
+            }, {
+                headers: {
+                    'api_key': `${process.env.API_KEY}`
+                }
+            });
+            user = response.data;
+
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
+    res.render("AboutPage", { user: user });
 });
 
 app.listen(process.env.PORT || 5000, () => {
