@@ -17,8 +17,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/", async function (req, res) {
     try {
-        var response = await axios("https://dummyjson.com/posts");
-        const data = response.data.posts;
+        var response = await axios(`${process.env.API_URL}api/v2/blog`, {
+            headers: {
+                'api_key': `${process.env.API_KEY}`
+            }
+        });
+        const data = response.data;
         var user = null
         if (req.cookies.token) {
             response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
@@ -39,9 +43,13 @@ app.get("/", async function (req, res) {
     }
 
 })
-app.get("/blog/:id", async function (req, res) {
-    try {
 
+app.get("/blog/:id", async function (req, res) {
+
+    const {id} = req.params;
+    
+    try {
+        res.send(id);
     } catch (e) {
         console.log(e);
     }
