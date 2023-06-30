@@ -44,14 +44,42 @@ app.get("/", async function (req, res) {
 
 })
 
-app.get("/blog/:id", async function (req, res) {
+app.get("/blog/:slug", async function (req, res) {
 
-    const {id} = req.params;
-    
-    try {
-        res.send(id);
-    } catch (e) {
-        console.log(e);
+
+    if (req.params.slug) {
+        const { slug } = req.params;
+        try {
+            var response = await axios.get(`${process.env.API_URL}api/v2/blog?slug=${slug}`, {
+                headers: {
+                    'api_key': `${process.env.API_KEY}`
+                }
+            });
+            const blogData = response.data;
+            var user = null
+
+            if (req.cookies.token) {
+                try {
+                    response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
+                        token: req.cookies.token
+                    }, {
+                        headers: {
+                            'api_key': `${process.env.API_KEY}`
+                        }
+                    });
+                    user = response.data;
+
+                } catch (e) {
+                    console.log(e);
+                }
+
+            }
+            res.send({blogData,user});
+        } catch (e) {
+            console.log(e);
+        }
+    } else {
+        res.send("Page No Found")
     }
 })
 
