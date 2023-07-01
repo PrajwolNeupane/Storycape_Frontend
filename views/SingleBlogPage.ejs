@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include('./components/Heading') %>
     <title><%=blog.title %></title>
+    <meta property="og:title" content="<%=blog.title %>">
+    <meta property="og:description" content="<%=blog.mainDescription %>">
+    <meta property="og:image" content="https://www.prajwolneupane.com.np/static/media/prajwol.6ce62fc9adbcc75e89cd.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="StoryScape">
   </head>
   <body>
     <%- include('./components/NavBar') %>
@@ -142,7 +147,7 @@
           <div class="flex flex-col gap-[20px] mb-[50px]">
             <% for (var i = 0; i < blog.description.length; i++) { %>
                 <% if (blog.description[i].includes('https://firebasestorage.googleapis.com')) { %>
-                    <img src="<%= blog.description[i] %>" class="w-[100%] h-[350px] object-contain" />
+                    <img src="<%= blog.description[i] %>" class="w-[100%] h-[320px] object-contain" />
                 <% } else { %>
                     <p class="font-medium text-xs text-text-light  dark:text-primary-mid">
                         <%= blog.description[i] %>
