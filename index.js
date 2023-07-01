@@ -74,7 +74,7 @@ app.get("/blog/:slug", async function (req, res) {
                 }
 
             }
-            res.send({blogData,user});
+            res.render('SingleBlogPage',{blog:blogData[0],user:user});
         } catch (e) {
             console.log(e);
         }

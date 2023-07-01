@@ -65,9 +65,10 @@
                 <p
                   class="font-regular text-xxs text-transparent bg-gradient-to-b from-text-mid via-text-mid to-primary-light bg-clip-text dark:text-primary-mid"
                 >
-                <%=data[i].description[0] %>
+                <%= data[i].mainDescription.length > 300 ? data[i].mainDescription.substring(0, 300) + '...' : data[i].mainDescription %>
+
                 </p>
-                <a href="blog/<%=data[i].slug %>" target="_blank" class="mt-[-35px] w-[200px]  mx-[auto]">
+                <a href="blog/<%=data[i].slug %>" target="_blank" class="mt-[5px] w-[200px]  mx-[auto]">
                   <button
                     class="bg-text-light dark:bg-primary-mid  py-[8px] w-[100%] text-xxs font-regular text-white dark:text-text-mid rounded-md hover:bg-text-mid dark:hover:bg-primary-light"
                   >
