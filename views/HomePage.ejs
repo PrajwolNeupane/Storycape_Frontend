@@ -53,13 +53,16 @@
                 <div class="flex flex-row items-start gap-[10px]">
                   <image
                     src=" <%=data[i].creater.photoURL %>"
-                    class="w-[55px] h-[55px] object-cover bg-secondary-main rounded-[50%]"
+                    class="w-[60px] h-[60px] object-cover bg-secondary-main rounded-[50%]"
                   />
                   <div>
                     <h2 class="font-semibold text-sm text-text-main dark:text-primary-light"><%=data[i].creater.name %></h2>
-                    <h4 class="font-medium text-xxs text-text-light dark:text-primary-main">
-                      <%=data[i].creater.email %>
+                    <h4 class="font-medium text-xxs text-text-main dark:text-primary-light">
+                      <%=data[i].tag %>
                     </h4>
+                <h4 class="font-medium text-xxs text-text-light dark:text-primary-main">
+                  <%=data[i].date %>
+                </h4>
                   </div>
                 </div>
                 <h1 class="font-medium text-lg text-text-main dark:text-primary-light">
