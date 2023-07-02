@@ -50,7 +50,9 @@ app.get("/blog/:slug", async function (req, res) {
     if (req.params.slug) {
         const { slug } = req.params;
         try {
-            var response = await axios.get(`${process.env.API_URL}api/v2/blog?slug=${slug}`, {
+            var response = await axios.post(`${process.env.API_URL}api/v2/blog/single`, {
+                slug: slug
+            }, {
                 headers: {
                     'api_key': `${process.env.API_KEY}`
                 }
@@ -74,7 +76,7 @@ app.get("/blog/:slug", async function (req, res) {
                 }
 
             }
-            res.render('SingleBlogPage',{blog:blogData[0],user:user});
+            res.render('SingleBlogPage', { blog: blogData, user: user });
         } catch (e) {
             console.log(e);
         }
