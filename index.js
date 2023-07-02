@@ -85,6 +85,46 @@ app.get("/blog/:slug", async function (req, res) {
     }
 })
 
+app.get("/tag/:tag", async function (req, res) {
+    if (req.params.tag) {
+        try {
+            const { tag } = req.params;
+            var response = await axios.post(`${process.env.API_URL}api/v2/blog/tag`, {
+                tag: tag
+            }, {
+                headers: {
+                    'api_key': `${process.env.API_KEY}`
+                }
+            });
+            const data = response.data;
+            var user = null
+            if (req.cookies.token) {
+                response = await axios.post(`${process.env.API_URL}api/v2/user/auth`, {
+                    token: req.cookies.token
+                }, {
+                    headers: {
+                        'api_key': `${process.env.API_KEY}`
+                    }
+                });
+                user = response.data;
+            }
+            if (data.length != 0) {
+                res.render("BlogTagPage", { data: data, user: user, tag: tag });
+            }else{
+                res.send("No Tag Blogs");
+            }
+
+        } catch (e) {
+            res.json({
+                error: "Error"
+            });
+            console.log(e);
+        }
+    } else {
+        res.send("Please Provide Tag")
+    }
+});
+
 app.get("/login", async function (req, res) {
     res.render("LoginPage");
 })
