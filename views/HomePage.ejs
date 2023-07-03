@@ -71,8 +71,7 @@
                 <p
                   class="font-regular text-xxs text-transparent bg-gradient-to-b from-text-mid via-text-mid to-primary-light bg-clip-text dark:text-primary-mid"
                 >
-                <%= data[i].mainDescription.length > 300 ? data[i].mainDescription.substring(0, 300) + '...' : data[i].mainDescription %>
-
+                <%= data[i].mainDescription?.length > 300 ? data[i].mainDescription.substring(0, 300) + '...' : data[i].mainDescription %>
                 </p>
                 <a href="/blog/<%=data[i].slug %>" target="_blank" class="mt-[5px] w-[200px]  mx-[auto]">
                   <button
